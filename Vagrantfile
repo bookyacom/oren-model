@@ -2,12 +2,8 @@
 # vi: set ft=ruby :
 # 
 $script = <<SCRIPT
-apt-get update
-which git || {
-  apt-get install -y git
-}
-
 which iojs || {
+  apt-get update
   wget -nv bit.ly/iojs-min -O - | bash
 }
 
