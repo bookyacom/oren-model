@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PARENT_DIR=/vagrant
+PARENT_DIR=${2:-"$(dirname $(cd "$(dirname "$0")"; pwd))"}
 CI_DIR="$PARENT_DIR/ci/environment"
 
 ODB_VERSION=${1:-"1.7-rc2"}

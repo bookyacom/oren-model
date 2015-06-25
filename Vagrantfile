@@ -34,7 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provision "shell", inline: $script, args:"vagrant-bookya-#{ENV['USER']}"
-  config.vm.provision "shell", path: "./ci/initialize-ci.sh", args: "#{ORIENTDB_VERSION}"
+  config.vm.provision "shell", path: "./ci/initialize-ci.sh", args: ["#{ORIENTDB_VERSION}", "/vagrant"]
 
   config.vm.network "forwarded_port", guest: 2424, host: 12424
   config.vm.network "forwarded_port", guest: 2480, host: 12480
